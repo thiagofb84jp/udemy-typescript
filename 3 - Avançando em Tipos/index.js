@@ -61,3 +61,75 @@ var displayMessage = function () {
     console.log("Hi, everuybody!");
 };
 displayMessage();
+// 7 - Tipos de objeto
+function passCoordinates(coord) {
+    console.log("X coordinates: " + coord.x);
+    console.log("Y coordinates: " + coord.y);
+}
+const objCoord = { x: 329, y: 84.2 };
+passCoordinates(objCoord);
+const pessoaObjeto = {
+    nome: "Thiago",
+    surname: "Ferreira Barbosa",
+};
+// 8 - Propriedades opcionais
+function showNumbers(a, b, c) {
+    console.log("A: " + a);
+    console.log("B: " + b);
+    if (c) {
+        console.log("C: " + c);
+    }
+}
+showNumbers(1, 2, 3);
+showNumbers(1, 2);
+// 9 - Validando argumento opcional
+function advancedGreeting(firstName, lastName) {
+    if (lastName !== undefined) {
+        return `Olá, ${firstName} ${lastName}, tudo bem?`;
+    }
+    return `Olá, ${firstName}, tudo bem?`;
+}
+console.log(advancedGreeting("John", "Appleseed"));
+console.log(advancedGreeting("John"));
+// 10 - Union Type
+function showBalance(balance) {
+    console.log(`O saldo da conta é R$ ${balance}`);
+}
+showBalance(100);
+showBalance("50");
+const arrayAnyValue = [1, "teste", false];
+console.log(arrayAnyValue);
+// 11 - Avançando em Union Type
+function showUserRole(role) {
+    if (typeof role === "boolean") {
+        return "Usuário não aprovado!";
+    }
+    return `A função do usuário é: ${role}`;
+}
+console.log(showUserRole(false));
+console.log(showUserRole("Admin"));
+function showID(id) {
+    console.log(`O ID é: ${id}`);
+}
+showID(1);
+showID("220");
+showID("12ES10D");
+function showCoords(obj) {
+    console.log(`X: ${obj.x} Y: ${obj.x} Z: ${obj.x}`);
+}
+const coordObj = {
+    x: 10,
+    y: 20,
+    z: 30,
+};
+let empObj1 = {
+    empCode: 1,
+    empName: "Steve",
+};
+let empObj2 = {
+    empCode: 2,
+    empName: "Bill",
+    empDept: "IT",
+};
+const somePerson = { name: "Bill", age: 35 };
+console.log(somePerson);
