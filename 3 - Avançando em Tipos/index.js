@@ -133,3 +133,46 @@ let empObj2 = {
 };
 const somePerson = { name: "Bill", age: 35 };
 console.log(somePerson);
+// 15 - Literal Types
+let varTest;
+varTest = "Testando";
+console.log(varTest);
+const helloWorld = "Hello World!";
+console.log(helloWorld);
+function letStauts(status) {
+    console.log(`O status é: ${status}`);
+}
+function showDirection(direction) {
+    console.log(`A direção é: ${direction}`);
+}
+letStauts("approved");
+showDirection("left");
+// 16 - Non null assertion operators (?)
+const p = document.getElementById("some-p");
+console.log(p.innerHTML);
+// Outro exemplo de not null assertion
+function greetUser(name) {
+    const formattedName = name;
+    console.log(`Hello, ${formattedName || "GeeksforGeeks"}!`);
+}
+greetUser("Jonathan");
+greetUser(null);
+// 17 - Bigint (é preciso alterar o arquivo de configuração JS {"target": "es2020"})
+let n;
+// n = 1;
+n = 1000n;
+const alsoHuge = BigInt(9007199254740991);
+console.log(n);
+console.log(typeof n);
+console.log(n + 100n);
+console.log(alsoHuge);
+// 18 - Symbol (cria uma referência única para um valor)
+let symbolA = Symbol("a");
+let symbolB = Symbol("a");
+console.log(symbolA == symbolB);
+console.log(symbolA === symbolB);
+const sym = Symbol();
+let obj = {
+    [sym]: "value",
+};
+console.log(obj[sym]);
