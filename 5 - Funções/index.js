@@ -106,3 +106,16 @@ console.log(verificandoTipo("Teste String"));
 console.log(verificandoTipo(10));
 // let ativo = true;
 // verificandoTipo(ativo);
+// 10 - Rest Operator
+function sumAll(...n) {
+    return n.reduce((number, sum) => sum + number);
+}
+console.log(sumAll(1, 2, 3, 4, 5));
+console.log(sumAll(50, 50, 50, 50, 50));
+// 11 - Destructuring como parâmetro
+function showProductDetails({ name, price, }) {
+    return `O nome do produto é ${name} e ele custa R$ ${price}`;
+}
+const shirt = { name: "Camisa", price: 49.99 };
+console.log(showProductDetails(shirt));
+console.log(showProductDetails({ name: "Livro", price: 30 }));
