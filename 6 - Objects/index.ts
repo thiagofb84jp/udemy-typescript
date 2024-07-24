@@ -78,3 +78,90 @@ nameAgeMap.Jack = 25;
 nameAgeMap.Mark = 50;
 
 console.log(nameAgeMap);
+
+// 5 - Extending interfaces
+interface Human {
+  name: string;
+  age: number;
+}
+
+interface SuperHuman extends Human {
+  superpowers: string[];
+}
+
+const mattew: Human = {
+  name: "Mattew",
+  age: 30,
+};
+
+console.log(mattew);
+
+const superman: SuperHuman = {
+  name: "Clark Kent",
+  age: 50,
+  superpowers: ["Red Vision", "Fly"],
+};
+
+console.log(superman.superpowers);
+
+// 6 - Intersection types
+interface Character {
+  name: string;
+}
+
+interface Gun {
+  type: string;
+  caliber: number;
+}
+
+type HumanWithGun = Character & Gun;
+
+const arnold: HumanWithGun = {
+  name: "Arnold",
+  type: "Shotgun",
+  caliber: 12,
+};
+
+console.log(arnold);
+
+console.log(arnold.caliber);
+
+// 7 - Readonly array
+let fruits: ReadonlyArray<string> = ["Maçã", "Laranja", "Banana", "Limão"];
+
+console.log(fruits);
+
+fruits.forEach((item) => {
+  console.log("Fruta: " + item);
+});
+
+fruits = fruits.map((item) => {
+  return `Fruta: ${item}`;
+});
+
+console.log(fruits);
+
+// 8 - Tuplas
+type fiveNumbers = [number, number, number, number, number];
+
+const myNumberArray: fiveNumbers = [1, 2, 3, 4, 5];
+
+console.log(myNumberArray);
+
+type nameAndAge = [string, number];
+
+const anotherUser: nameAndAge = ["Jack", 30];
+
+console.log(anotherUser[0]);
+
+anotherUser[0] = "João";
+
+console.log(anotherUser[0]);
+
+// 9 - Tuplas com readonly
+function showNumbers(numbers: readonly [number, number]) {
+  console.log(numbers[0]);
+  console.log(numbers[1]);
+}
+
+showNumbers([1, 2]);

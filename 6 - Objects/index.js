@@ -40,3 +40,43 @@ const nameAgeMap = {};
 nameAgeMap.Jack = 25;
 nameAgeMap.Mark = 50;
 console.log(nameAgeMap);
+const mattew = {
+    name: "Mattew",
+    age: 30,
+};
+console.log(mattew);
+const superman = {
+    name: "Clark Kent",
+    age: 50,
+    superpowers: ["Red Vision", "Fly"],
+};
+console.log(superman.superpowers);
+const arnold = {
+    name: "Arnold",
+    type: "Shotgun",
+    caliber: 12,
+};
+console.log(arnold);
+console.log(arnold.caliber);
+// 7 - Readonly array
+let fruits = ["Maçã", "Laranja", "Banana", "Limão"];
+console.log(fruits);
+fruits.forEach((item) => {
+    console.log("Fruta: " + item);
+});
+fruits = fruits.map((item) => {
+    return `Fruta: ${item}`;
+});
+console.log(fruits);
+const myNumberArray = [1, 2, 3, 4, 5];
+console.log(myNumberArray);
+const anotherUser = ["Jack", 30];
+console.log(anotherUser[0]);
+anotherUser[0] = "João";
+console.log(anotherUser[0]);
+// 9 - Tuplas com readonly
+function showNumbers(numbers) {
+    console.log(numbers[0]);
+    console.log(numbers[1]);
+}
+showNumbers([1, 2]);
