@@ -23,5 +23,27 @@ let stringFromAssertion = numberValue.toString();
 console.log("String from assertion: ", stringFromAssertion);
 console.log("***********************************************************");
 /**
- * https://www.w3resource.com/typescript-exercises/typescript-basic-exercise-2.php
- */ 
+ * 3. Write a TypeScript program that declares variables using let, const, and var. Then, describe how
+ *    each declaration type behaves with respect to scoping and mutability.
+ */
+console.log("********************* Exercício no. 3 *********************");
+// Using let
+let var1 = 5;
+if (true) {
+    var1 = 10;
+}
+console.log(var1);
+// Using const
+const var2 = "Hello!";
+// var2 = "World"; -> cannot reassign a const variable
+// Using var
+function exampleFunction() {
+    var var3 = true;
+    if (var3) {
+        // var var3: boolean = false;
+        var3 = false;
+    }
+    console.log(var3);
+}
+exampleFunction();
+console.log("***********************************************************");
