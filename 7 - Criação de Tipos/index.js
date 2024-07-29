@@ -68,3 +68,8 @@ let newCar = {
     description: "Carro para passeio.",
 };
 showKm(newCar.km);
+const someVar = 5;
+const testing = "some text";
+let greeting;
+greeting = "Hello, World!";
+greeting = "Hello, Typescript!";

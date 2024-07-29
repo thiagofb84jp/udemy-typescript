@@ -113,3 +113,43 @@ let newCar = {
 };
 
 showKm(newCar.km);
+
+// 8 - Conditional types
+interface A {}
+
+interface B extends A {}
+
+interface Foo {
+  showName(): string;
+}
+
+type myType = B extends A ? number : string;
+
+const someVar: myType = 5;
+
+type myTypeB = Foo extends { showNumber(): number } ? string : boolean;
+
+// Another example
+type IsString<T> = T extends string ? true : false;
+type D = IsString<string>; // true
+type E = IsString<number>; // false
+
+// 9 - Template literal types
+type typeA = "text";
+
+type CustomType = `some ${typeA}`;
+
+const testing: CustomType = "some text";
+
+type type1 = "Testando";
+type type2 = "Union";
+
+type resType = `${type1} | ${type2}`;
+
+// Another example
+type HelloWorld = `Hello, ${string}`;
+
+let greeting: HelloWorld;
+
+greeting = "Hello, World!";
+greeting = "Hello, Typescript!";

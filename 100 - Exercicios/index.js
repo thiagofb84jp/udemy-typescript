@@ -47,3 +47,75 @@ function exampleFunction() {
 }
 exampleFunction();
 console.log("***********************************************************");
+/**
+ * 4. Write a TypeScript program that declares variables of the following data types: number, string,
+ *    boolean, and undefined. Assign values to them and perform basic operations.
+ */
+console.log("********************* Exercício no. 4 *********************");
+let num1Var = 42;
+let strVar = "Hello World, Typescript!";
+let boolVar = true;
+let undefVar = undefined;
+const num2Var = 10;
+const sum = num1Var + num2Var;
+console.log("Sum = ", sum);
+const concatString = strVar + " How are you?";
+console.log("Concatated string = ", concatString);
+const isTrue = boolVar && true;
+console.log("Logical AND = ", isTrue);
+if (undefVar === undefined) {
+    console.log("Undefined variable is undefined.");
+}
+else {
+    console.log("Undefined variable is defined.");
+}
+console.log("***********************************************************");
+/**
+ * 5. Write a TypeScript program that declares a variable as a number and then tries to assign a
+ *    string to it to see type checking in action.
+ */
+console.log("********************* Exercício no. 5 *********************");
+let n = 42;
+let strHello = "Hello, Typescript!";
+console.log("n = ", n);
+console.log("strHello = ", strHello);
+console.log("***********************************************************");
+/**
+ * 6. Write a TypeScript program that declares a variable without specifying its type and shows how
+ *    TypeScript infers the type based on the assigned value.
+ */
+console.log("********************* Exercício no. 6 *********************");
+let temp = 100;
+console.log("Type of temp: ", typeof temp);
+let helloTs = "Hello, Typescript!";
+console.log("My Variable: ", typeof helloTs);
+console.log("***********************************************************");
+/**
+ * 7. Write a TypeScript program that defines an enumeration 'Color' with values 'Red', 'Green',
+ *    'White' and Blue. Create a variable 'selectedColor' of type 'Color' and assign it one of the
+ *    enumeration values.
+ */
+console.log("********************* Exercício no. 7 *********************");
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 0] = "Red";
+    Color[Color["Green"] = 1] = "Green";
+    Color[Color["White"] = 2] = "White";
+    Color[Color["Blue"] = 3] = "Blue";
+})(Color || (Color = {}));
+console.log("List of colors: ", Color);
+let selectedColor = Color.Green;
+console.log("Selected Color: ", selectedColor);
+var Status;
+(function (Status) {
+    Status[Status["Active"] = 1] = "Active";
+    Status[Status["Inactive"] = 2] = "Inactive";
+    Status[Status["Pending"] = 3] = "Pending";
+})(Status || (Status = {}));
+let currentStatus = Status.Inactive;
+console.log("List of status: ", Status);
+console.log("Current Status: ", currentStatus);
+console.log("***********************************************************");
+// https://www.w3resource.com/typescript-exercises/typescript-basic-exercise-10.php
+// https://www.w3resource.com/typescript-exercises/typescript-basic-exercise-8.php
+// https://www.w3resource.com/typescript-exercises/typescript-basic-exercise-7.php
