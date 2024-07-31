@@ -109,3 +109,140 @@ myCoords.fillY = 0;
 myCoords.fillY = 10;
 console.log(myCoords);
 console.log(myCoords.getCoords);
+class BlogPost {
+    constructor(title) {
+        this.title = title;
+    }
+    itemTitle() {
+        return `O título do post é: ${this.title}`;
+    }
+}
+const myPost = new BlogPost("Hello World!");
+console.log(myPost.itemTitle());
+class TestingInterface {
+    constructor(title) {
+        this.title = title;
+    }
+    itemTitle() {
+        return `O título é: ${this.title}`;
+    }
+}
+const historyPost = new TestingInterface("The gods of old Greek");
+console.log(historyPost.itemTitle());
+// 10 - Override de métodos
+class Base {
+    someMethod() {
+        console.log("Something important here...");
+    }
+    showName() { }
+}
+class Nova extends Base {
+    someMethod() {
+        console.log("Foo Foo Foo");
+    }
+    anotherMethod() { }
+}
+const myObject = new Nova();
+myObject.someMethod();
+// 11 - Public class
+class C {
+    constructor() {
+        this.x = 10;
+    }
+}
+class D extends C {
+    constructor() {
+        super(...arguments);
+        this.y = 11;
+    }
+}
+const c = new C();
+console.log(c.x);
+const d = new D();
+console.log(d.x);
+console.log(d.y);
+// 12 - Protected
+class E {
+    constructor() {
+        this.x = 10;
+    }
+    protectedMethod() {
+        console.log("Esse método é protegido.");
+    }
+}
+class F extends E {
+    showX() {
+        console.log("X: ", this.x);
+    }
+    showProtectedMethod() {
+        this.protectedMethod();
+    }
+}
+const f = new F();
+f.showX();
+f.showProtectedMethod();
+// Another example of protected class
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    makeSound() {
+        console.log(`${this.name} is making a sound.`);
+    }
+}
+class Dog extends Animal {
+    constructor(name) {
+        super(name);
+    }
+    bark() {
+        this.makeSound();
+        console.log(`${this.name} is barking.`);
+    }
+}
+const dog = new Dog("Rex");
+dog.bark();
+// 13 - Private
+class PrivateClass {
+    constructor() {
+        this.name = "Private";
+    }
+    showName() {
+        return this.name;
+    }
+    privateMethod() {
+        console.log("Método Privado!");
+    }
+    showPrivateMethod() {
+        this.privateMethod();
+    }
+}
+const pObj = new PrivateClass();
+console.log(pObj.showName());
+pObj.showPrivateMethod();
+// 14 - Static Members
+class StaticMembers {
+    static staticMethod() {
+        console.log("Esse é um método estático!");
+    }
+}
+StaticMembers.prop = "Teste Static";
+console.log(StaticMembers.prop);
+StaticMembers.staticMethod();
+// 15 - Generic Class
+class Item {
+    constructor(first, second) {
+        this.first = first;
+        this.second = second;
+    }
+    get showFirst() {
+        return `O first é: ${this.first}`;
+    }
+}
+const newItem = new Item(true, 500);
+console.log(newItem);
+console.log(newItem.showFirst);
+console.log(typeof newItem.first);
+const secondItem = new Item(12, "Unknown");
+console.log(secondItem);
+console.log(secondItem.showFirst);
+console.log(typeof secondItem.first);
