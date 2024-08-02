@@ -354,3 +354,88 @@ console.log(secondItem);
 
 console.log(secondItem.showFirst);
 console.log(typeof secondItem.first);
+
+// 16 - Parameter Properties
+class ParameterProperties {
+  constructor(public name: string, private qty: number, private price: number) {
+    this.name = name;
+    this.qty = qty;
+    this.price = price;
+  }
+
+  get showQty() {
+    return `Quantidade total: ${this.qty}`;
+  }
+
+  get showPrice() {
+    return `Valor total: ${this.price}`;
+  }
+}
+
+const newShirt = new ParameterProperties("Camisa", 5, 19.9);
+
+console.log(newShirt);
+console.log(newShirt.name);
+
+// 17 - Class expressions
+const myClass = class<T> {
+  name;
+
+  constructor(name: T) {
+    this.name = name;
+  }
+};
+
+const pessoa = new myClass("Jones");
+
+console.log(pessoa);
+
+// Another example of class expression
+const item = class {
+  constructor(public name: string, public price: number) {
+    this.name = name;
+    this.price = price;
+  }
+
+  showPrice() {
+    console.log(`The book ${this.name}, his price costs U$ ${this.price}!`);
+  }
+};
+
+const instPrice = new item("O Morro dos Ventos Uivantes", 19.5);
+instPrice.showPrice();
+
+// 18 - Classe Abstrata
+abstract class AbstractClass {
+  abstract showName(): void;
+}
+
+class AbstractExample extends AbstractClass {
+  name: string;
+
+  constructor(name: string) {
+    super();
+    this.name = name;
+  }
+
+  showName() {
+    console.log(`O nome é ${this.name}`);
+  }
+}
+
+const newAbstractObject = new AbstractExample("Joshua");
+
+newAbstractObject.showName();
+
+// 19 - Relações entre classes
+class Whale {
+  name!: string;
+}
+
+class Ramster {
+  name!: string;
+}
+
+const whale: Ramster = new Whale();
+
+console.log(whale);
