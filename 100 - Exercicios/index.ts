@@ -146,6 +146,20 @@ console.log("Current Status: ", currentStatus);
 
 console.log("***********************************************************");
 
-// https://www.w3resource.com/typescript-exercises/typescript-basic-exercise-10.php
+/**
+ * 8. Write a TypeScript program that declares a variable 'isNull' and assigns it null. You should also
+ *    declare a variable called 'isUndefined' and assign it an undefined value.
+ */
+console.log("********************* Exercício no. 8 *********************");
+let isNull: null = null;
+
+let isUndefined: undefined = undefined;
+
+console.log("isNull: ", isNull);
+console.log("isUndefined: ", isUndefined);
+
+console.log("***********************************************************");
+
 // https://www.w3resource.com/typescript-exercises/typescript-basic-exercise-8.php
 // https://www.w3resource.com/typescript-exercises/typescript-basic-exercise-7.php
+// https://wiki.python.org.br/EstruturaSequencial
