@@ -149,3 +149,145 @@ class Monster {
 const charmander = new Monster("Charmander", 10);
 
 console.log(charmander);
+
+// 6 - Property Decorator
+// 00001
+function formatNumber() {
+  return function (target: object, propertyKey: string) {
+    let value: string;
+
+    const getter = function () {
+      return value;
+    };
+
+    const setter = function (newVal: string) {
+      value = newVal.padStart(5, "0");
+    };
+
+    Object.defineProperty(target, propertyKey, {
+      set: setter,
+      get: getter,
+    });
+  };
+}
+
+class ID {
+  @formatNumber()
+  id;
+
+  constructor(id: string) {
+    this.id = id;
+  }
+}
+
+const newItem = new ID("1");
+
+console.log(newItem.id);
+
+// 7 - Exemplo Real com Class Decorator
+function createdDate(created: Function) {
+  created.prototype.createdAt = new Date();
+}
+
+@createdDate
+class Book {
+  id;
+  createdAt?: Date;
+
+  constructor(id: number) {
+    this.id = id;
+  }
+}
+
+@createdDate
+class Pen {
+  id;
+
+  constructor(id: number) {
+    this.id = id;
+  }
+}
+
+const book = new Book(12);
+const pen = new Pen(55);
+
+console.log(book);
+console.log(pen);
+
+console.log(book.createdAt);
+
+// 8 - Exemplo Real com Method Decorator
+function checkIfUserPosted() {
+  return function (
+    target: Object,
+    key: string | Symbol,
+    descriptor: PropertyDescriptor
+  ) {
+    const childFunction = descriptor.value;
+    descriptor.value = function (...args: any[]) {
+      if (args[1] === true) {
+        console.log("Usuário já postou por hoje!");
+        return null;
+      } else {
+        return childFunction.apply(this, args);
+      }
+    };
+  };
+}
+
+class Post {
+  alreadyPosted = false;
+
+  @checkIfUserPosted()
+  post(content: string, alreadyPosted: boolean) {
+    this.alreadyPosted = true;
+    console.log(`Post do usuário: ${content}`);
+  }
+}
+
+const litPost = new Post();
+
+litPost.post("Meu primeiro post sobre literatura!", litPost.alreadyPosted);
+
+litPost.post("Meu segundo post sobre literatura!", litPost.alreadyPosted);
+
+litPost.post("Meu terceiro post sobre literatura!", litPost.alreadyPosted);
+
+// 9 - Exemplo Real com Property Decorator
+function Max(limit: number) {
+  return function (target: Object, propertyKey: string) {
+    let value: string;
+
+    const getter = function () {
+      return value;
+    };
+
+    const setter = function (newVal: string) {
+      if (newVal.length > limit) {
+        console.log(`O valor deve ter no mínimo ${limit} dígitos.`);
+
+        return;
+      } else {
+        value = newVal;
+      }
+    };
+
+    Object.defineProperty(target, propertyKey, {
+      get: getter,
+      set: setter,
+    });
+  };
+}
+
+class Admin {
+  @Max(10)
+  username;
+
+  constructor(username: string) {
+    this.username = username;
+  }
+}
+
+const userAdmin = new Admin("josesantos");
+
+console.log(userAdmin);
