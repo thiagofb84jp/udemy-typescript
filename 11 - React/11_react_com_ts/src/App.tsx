@@ -3,6 +3,13 @@ import React from "react";
 // 4 - Componentes
 import FirstComponent from "./components/FirstComponent";
 
+// 5 - Desestruturando props
+import SecondComponent from "./components/SecondComponent";
+import Destructuring from "./components/Destructuring";
+
+// 6 - UseState
+import State from "./components/State";
+
 function App() {
   // 1 - Variáveis
   const name: string = "James";
@@ -28,7 +35,20 @@ function App() {
       )}
       <h3>{userGreeting(name)}</h3>
       <FirstComponent />
-      <FirstComponent />
+      <SecondComponent name="segundo" />
+      <Destructuring
+        title="Primeiro Post"
+        content="Algum conteúdo qualquer"
+        commentsQty={10}
+        tags={["ts ", "js ", "Java ", "Python "]}
+      />
+      <Destructuring
+        title="Segundo Post"
+        content="Outro conteúdo qualquer"
+        commentsQty={10}
+        tags={["ts ", "js ", "Java ", "Python "]}
+      />
+      <State />
     </div>
   );
 }
