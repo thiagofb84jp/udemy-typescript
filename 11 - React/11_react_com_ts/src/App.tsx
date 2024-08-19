@@ -22,7 +22,6 @@ interface IAppContext {
   projects: number;
 }
 
-// export const AppContext = createContext<IAppContext | null>(null);
 export const AppContext = createContext<IAppContext | null>(null);
 
 function App() {
