@@ -159,7 +159,36 @@ console.log("isNull: ", isNull);
 console.log("isUndefined: ", isUndefined);
 
 console.log("***********************************************************");
+/**
+ * 9. Write a TypeScript program that declares an array of a specific data type. It will demonstrates
+ *    common array operations like adding elements, removing elements, and iterating through the array.
+ */
+console.log("********************* Exercício no. 9 *********************");
+const weeks: string[] = ["Sunday", "Monday", "Tuesday", "Wednesday"];
 
-// https://www.w3resource.com/typescript-exercises/typescript-basic-exercise-8.php
+weeks.push("Thursday");
+weeks.push("Friday");
+
+weeks.pop();
+
+console.log("Array Elements: ");
+for (const w of weeks) {
+  console.log(w);
+}
+
+const searchWeek = "Friday";
+const isWeekInArray = weeks.includes(searchWeek);
+console.log(`Is ${searchWeek} in the array? ${isWeekInArray ? "Yes" : "No"}`);
+
+const indexOfWeek = weeks.indexOf("Monday");
+console.log(`Index of "Monday" in the array: ${indexOfWeek}`);
+
+if (indexOfWeek !== -1) {
+  weeks.splice(indexOfWeek, 1);
+}
+
+console.log("Modifield Array:");
+console.log(weeks);
+console.log("***********************************************************");
 // https://www.w3resource.com/typescript-exercises/typescript-basic-exercise-7.php
 // https://wiki.python.org.br/EstruturaSequencial

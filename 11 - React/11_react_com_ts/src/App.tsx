@@ -9,11 +9,12 @@ import Destructuring, { Category } from "./components/Destructuring";
 
 // 6 - UseState
 import State from "./components/State";
-// import { createContext } from "node:vm";
+
+// 10 - Utilizando contexto
+import Context from "./components/Context";
 
 // 8 - Type
 type textOrNull = string | null;
-type fixed = "Isso" | "Ou" | "Aquilo" | "Isso, isso, isso!";
 
 // 9 - Context
 interface IAppContext {
@@ -40,8 +41,6 @@ function App() {
     "Tem algum texto aqui. Por favor, verifique novamente.";
   let mySecondText: textOrNull = null;
   mySecondText = "Opa";
-
-  const testandoFixed: fixed = "Isso, isso, isso!";
 
   // 9 - Context
   const contextValue: IAppContext = {
@@ -83,12 +82,10 @@ function App() {
         <State />
         {myText && <p>Tem texto na variável</p>}
         {mySecondText && <p>Tem texto na variável</p>}
-        {testandoFixed}
+        <Context />
       </div>
     </AppContext.Provider>
   );
 }
 
 export default App;
-
-// https://github.com/matheusbattisti/curso_typescript/blob/main/11_ts_com_react/src/App.tsx
