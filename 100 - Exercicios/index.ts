@@ -89,10 +89,8 @@ console.log("***********************************************************");
 
 /**
  * 5. Write a TypeScript program that declares a variable as a number and then tries to assign a
- *    string to it to see type checking in action.
- */
-console.log("********************* Exercício no. 5 *********************");
-let n: number = 42;
+ *    string to it to see typ// https://www.w3resource.com/typescript-exercises/typescript-basic-exercise-8.php
+
 let strHello: string = "Hello, Typescript!";
 
 console.log("n = ", n);
@@ -190,5 +188,6 @@ if (indexOfWeek !== -1) {
 console.log("Modifield Array:");
 console.log(weeks);
 console.log("***********************************************************");
+
 // https://www.w3resource.com/typescript-exercises/typescript-basic-exercise-7.php
 // https://wiki.python.org.br/EstruturaSequencial
