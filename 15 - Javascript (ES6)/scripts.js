@@ -85,3 +85,94 @@ const user = {
 
 user.sayUserName();
 user.sayUserNameArrow();
+
+// 3 - Filter
+const array = [1, 2, 3, 4, 5];
+
+console.log(array);
+
+const highNumbers = array.filter((number) => {
+  if (number >= 3) {
+    return number;
+  }
+});
+
+console.log(highNumbers);
+
+const users = [
+  { name: "Jonathan", available: true },
+  { name: "Joana", available: true },
+  { name: "Jean", available: false },
+  { name: "Jefferson", available: true },
+  { name: "João", available: false },
+];
+
+const availableUsers = users.filter((user) => user.available);
+const notAvailableUsers = users.filter((user) => !user.available);
+
+console.log(availableUsers);
+
+// 4 - Map
+const products = [
+  { name: "Camisa", price: 10.99, category: "Roupas" },
+  { name: "Chaleira Elétrica", price: 50.99, category: "Eletrodomésticos" },
+  { name: "Fogão", price: 400.99, category: "Eletrodomésticos" },
+  { name: "Calça Jeans", price: 65.99, category: "Roupas" },
+];
+
+products.map((product) => {
+  if (product.category === "Roupas") {
+    product.onSale = true;
+  }
+});
+
+console.log(products);
+
+// 5 - Template Literals
+const UserName = "Marcos";
+const age = 30;
+
+const femaleName = "Maria";
+const ageFemale = 40;
+
+console.log(`O nome do usuário é ${UserName} e ele tem ${age} anos.`);
+console.log(
+  "O nome do usuário é " + femaleName + " e ele tem " + ageFemale + " anos."
+);
+
+// 6 - Destructuring
+const fruits = ["Maçã", "Laranja", "Mamão"];
+
+const [f1, f2, f3] = fruits;
+
+console.log(f1);
+
+console.log(f3);
+
+const productDetails = {
+  name: "Mouse",
+  price: 39.9,
+  category: "Periféricos",
+  color: "Cinza",
+};
+
+const {
+  name: productName,
+  price,
+  category: productCategory,
+  color,
+} = productDetails;
+
+console.log(
+  `O nome do produto é ${productName}, custa R$${price}, pertence a categoria ${productCategory} e é da cor ${color}.`
+);
+
+// 7 - Spread Operator
+const a1 = [1, 2, 3];
+const a2 = [4, 5, 6];
+
+const a3 = [...a1, ...a2];
+
+console.log(a3);
+
+const a4 = [0];
